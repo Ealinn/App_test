@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test App</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap/Bootstrap Datepicker -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <aside class="app-sidenav d-flex flex-column justify-content-between">
+      <nav class="app-nav" aria-label="App navigation">
+        <a class="app-logo" href="#">
+          <img src="images/icons/logo.svg" alt="Logo">
+        </a>
+        <ul class="sidenav-list">
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--dashbd active" href="#">Dashboard</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--setts" href="#">Tasks</a>
+          </li>
+        </ul>
+        <ul class="sidenav-list">
+          <li class="sidenav-list__item">
+            <h2 class="sidenav-heading">Marketing</h2>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--contacts" href="#">Contacts</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--content" href="#">Content</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--templ" href="#">Templates</a>
+          </li>
+        </ul>
+        <ul class="sidenav-list">
+          <li class="sidenav-list__item">
+            <h2 class="sidenav-heading">Planning</h2>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--dest" href="#">Destintations</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--searchsupp" href="#">Search Supply</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--suppl" href="#">Suppliers</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--trips" href="#">Trips</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--commun" href="#">Community</a>
+          </li>
+        </ul>
+        <ul class="sidenav-list">
+          <li class="sidenav-list__item">
+            <h2 class="sidenav-heading">Business</h2>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--commiss" href="#">Commissions</a>
+          </li>
+          <li class="sidenav-list__item">
+            <a class="sidenav-list__link sidenav-list__link--reports" href="#">Reports</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="sidenav-list">
+        <li class="sidenav-list__item">
+          <a class="sidenav-list__link sidenav-list__link--help" href="#">Training & Help</a>
+        </li>
+        <li class="sidenav-list__item">
+          <a class="sidenav-list__link sidenav-list__link--setts" href="#">Settings</a>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="page">
+      <header class="page-header">
+        <div class="page-header__nav header-nav">
+          <ul class="nav nav-pills header-nav__pills" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-hotels-tab" data-bs-toggle="pill" data-bs-target="#pills-hotels"
+                type="button" role="tab" aria-controls="pills-hotels" aria-selected="true">Hotels<span
+                  class="header-nav__amount">170,802</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="pills-cruises-tab" data-bs-toggle="pill" data-bs-target="#pills-cruises"
+                type="button" role="tab" aria-controls="pills-cruises" aria-selected="false">Cruises<span
+                  class="header-nav__amount">57</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-tours-tab" data-bs-toggle="pill" data-bs-target="#pills-tours"
+                type="button" role="tab" aria-controls="pills-tours" aria-selected="false">TOURS<span
+                  class="header-nav__amount">9</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-cars"
+                type="button" role="tab" aria-controls="pills-cars" aria-selected="false">CARS<span
+                  class="header-nav__amount">13</span></button>
+            </li>
+          </ul>
+          <button class="header-nav__btn" type="button" data-bs-toggle="modal" data-bs-target="#newSupplyModal">New
+            Supply</button>
+        </div>
+        <div class="page-header__filters header-filters d-flex">
+          <div class="input-group header-filters__search icon-search">
+            <input type="search" class="form-control header-filters__input" placeholder="Search items"
+              aria-label="Search items">
+            <button class="btn header-filters__btn header-filters__btn--filter" type="button">Filters</button>
+          </div>
+          <div class="btn-group header-filters__btns" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn header-filters__btn">Check In</button>
+            <button type="button" class="btn header-filters__btn">Check Out</button>
+            <div class="btn-group" role="group">
+              <button id="btnGuestsDrop" type="button"
+                class="btn header-filters__btn header-filters__btn--guests dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">Guests</button>
+              <ul class="dropdown-menu header-filters__dropdown" aria-labelledby="btnGuestsDrop">
+                <li><span class="dropdown-item">Colin Nelson</span></li>
+                <li><span class="dropdown-item">Gresham Carr</span></li>
+                <li><span class="dropdown-item">Virgil Grant</span></li>
+                <li><span class="dropdown-item">Gilbert Hopkins</span></li>
+                <li><span class="dropdown-item">Sarah Lamb</span></li>
+                <li><span class="dropdown-item">Dennis Dinwiddie</span></li>
+                <li><span class="dropdown-item">Mia Pope</span></li>
+                <li><span class="dropdown-item">Jessica Bird</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="page-content">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-hotels" role="tabpanel" aria-labelledby="pills-hotels-tab">
+            <table class="table">
+              <thead class="table-header">
+                <tr>
+                  <th class="table-header__cell column-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_all">
+                    <label class="select-input-label" for="select_all">
+                      <span class="visually-hidden">Select all</span>
+                    </label>
+                  </th>
+                  <th class="table-header__cell column-name" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">name</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down active"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-supplier" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">Supplier</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-location" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">Location</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-vibe" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">Vibe</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-perks" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">Perks</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-price" scope="col">
+                    <div class="d-flex">
+                      <span class="table-header__text">FROM</span>
+                      <div class="sort-indicators">
+                        <span class="sort-indicator icon-triangle-up"></span>
+                        <span class="sort-indicator icon-triangle-down"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="table-header__cell column-amenities" scope="col">
+                    <span class="table-header__text">Amenities</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table-list">
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_1">
+                    <label class="select-input-label" for="select_row_1">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Grand Hotel du Palais Royal</td>
+                  <td class="row-supplier">Fairmont</td>
+                  <td class="row-location">Paris, France</td>
+                  <td class="row-vibe">Sophisticated</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 10.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_2">
+                    <label class="select-input-label" for="select_row_2">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Rosewood Little Dix Bay</td>
+                  <td class="row-supplier">Rosewood</td>
+                  <td class="row-location">Virgin Gorda, BVI</td>
+                  <td class="row-vibe">Comfortable Beach</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 12.3k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_3">
+                    <label class="select-input-label" for="select_row_3">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Vila Planinka</td>
+                  <td class="row-supplier">Fairmont</td>
+                  <td class="row-location">Paris, France</td>
+                  <td class="row-vibe">Urban Chic</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 9.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_4">
+                    <label class="select-input-label" for="select_row_4">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Fairmont Olympic Hotel</td>
+                  <td class="row-supplier">Fairmont</td>
+                  <td class="row-location">Paris, France</td>
+                  <td class="row-vibe">Business</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Fairmont Plus</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 8.8k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_5">
+                    <label class="select-input-label" for="select_row_5">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Palmaia - House of AiA</td>
+                  <td class="row-supplier">Palmaia</td>
+                  <td class="row-location">Paris, France</td>
+                  <td class="row-vibe">Party Scene</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 8.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_6">
+                    <label class="select-input-label" for="select_row_6">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">InterContinental Amstel</td>
+                  <td class="row-supplier">InterContinental</td>
+                  <td class="row-location">Amsterdam, Neth...</td>
+                  <td class="row-vibe">Boutique</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 7.2k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_7">
+                    <label class="select-input-label" for="select_row_7">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Aman Tokyo</td>
+                  <td class="row-supplier">Aman</td>
+                  <td class="row-location">Paris, France</td>
+                  <td class="row-vibe">Quiet Comfort</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 11.8k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_8">
+                    <label class="select-input-label" for="select_row_8">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Oasy Hotel</td>
+                  <td class="row-supplier">IHG</td>
+                  <td class="row-location">London, UK</td>
+                  <td class="row-vibe">Urban Living</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 7.4k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_9">
+                    <label class="select-input-label" for="select_row_9">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Como Uma Punakha</td>
+                  <td class="row-supplier">IHG</td>
+                  <td class="row-location">Mumbai, India</td>
+                  <td class="row-vibe">Hip/Trendy</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 6.3k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_10">
+                    <label class="select-input-label" for="select_row_10">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Central Private Hotel</td>
+                  <td class="row-supplier">InterContinental</td>
+                  <td class="row-location">Rotterdam, Nethe...</td>
+                  <td class="row-vibe">Busy Urban</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 6.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_11">
+                    <label class="select-input-label" for="select_row_11">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Capella Bangkok</td>
+                  <td class="row-supplier">InterContinental</td>
+                  <td class="row-location">Bangkok, Thailan...</td>
+                  <td class="row-vibe">Party Scene</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 4.7k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_12">
+                    <label class="select-input-label" for="select_row_12">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">The Londoner</td>
+                  <td class="row-supplier">Fairmont</td>
+                  <td class="row-location">Bangkok, Thailan...</td>
+                  <td class="row-vibe">Busy Urban</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 4.8k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_13">
+                    <label class="select-input-label" for="select_row_13">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">St. Regis Hong Kong</td>
+                  <td class="row-supplier">Marriott</td>
+                  <td class="row-location">Hong Kong</td>
+                  <td class="row-vibe">Party Scene</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 4.1k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_14">
+                    <label class="select-input-label" for="select_row_14">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Ritz-Carlton, Turks & Caicos</td>
+                  <td class="row-supplier">Ritz-Carlton</td>
+                  <td class="row-location">Turks & Caicos</td>
+                  <td class="row-vibe">Party Scene</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Multiple</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 9.3k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_15">
+                    <label class="select-input-label" for="select_row_15">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Ritz-Carlton, Aruba</td>
+                  <td class="row-supplier">Ritz-Carlton</td>
+                  <td class="row-location">Aruba</td>
+                  <td class="row-vibe">Party Beach</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Multiple</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 8.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_16">
+                    <label class="select-input-label" for="select_row_16">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">The Bedford</td>
+                  <td class="row-supplier">IHG</td>
+                  <td class="row-location">Coppenhagen</td>
+                  <td class="row-vibe">Quiet Luxury</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 5.1k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="row-selection">
+                    <input class="select-input checkbox" type="checkbox" value="" id="select_row_17">
+                    <label class="select-input-label" for="select_row_17">
+                      <span class="visually-hidden">Select row</span>
+                    </label>
+                  </td>
+                  <td class="row-name">Fairmont London</td>
+                  <td class="row-supplier">Fairmont</td>
+                  <td class="row-location">London, UK</td>
+                  <td class="row-vibe">Busy Urban</td>
+                  <td class="row-perks">
+                    <span class="perks-tag">Virtuoso</span>
+                  </td>
+                  <td class="row-price"><span class="price-currency">US$</span> 6.5k</td>
+                  <td class="row-amenities">
+                    <ul class="amenities-list">
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--rope"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--swim"></span></li>
+                      <li class="amenities-list__item"><span class="amenities-icon amenities-icon--pizza"></span></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="pills-cruises" role="tabpanel" aria-labelledby="pills-cruises-tab">Cruises
+          </div>
+          <div class="tab-pane fade" id="pills-tours" role="tabpanel" aria-labelledby="pills-tours-tab">TOURS</div>
+          <div class="tab-pane fade" id="pills-cars" role="tabpanel" aria-labelledby="pills-cars-tab">CARS</div>
+        </div>
+      </main>
+      <footer class="page-footer footer">
+        <div class="footer-details">
+          Showing <span class="footer__row-amnt">1</span> to <span class="footer__row-amnt">20</span> of <span
+            class="footer__results">170,802</span> results
+        </div>
+        <div class="footer-info">
+          <div class="footer-rows">
+            <span>Rows per page:</span>
+            <div class="btn-group" role="group">
+              <button id="btnRowsDrop" type="button" class="btn footer-rows__btn dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">20</button>
+              <ul class="dropdown-menu footer-rows__dropdown" aria-labelledby="btnRowsDrop">
+                <li><span class="dropdown-item">20</span></li>
+                <li><span class="dropdown-item">40</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-buttons">
+            <button class="footer-buttons__btn" type="button">Previous</button>
+            <button class="footer-buttons__btn" type="button">Next</button>
+          </div>
+        </div>
+        <!-- Modal aria-hidden="true"  aria-modal="true" role="dialog" style="display: block;"-->
+        <div class="modal fade show modal-supply" id="newSupplyModal" tabindex="-1"
+          aria-labelledby="newSupplyModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-supply__dialog">
+            <div class="modal-content modal-supply__content">
+              <div class="modal-header modal-supply__header">
+                <h4 class="modal-title modal-supply__title" id="newSupplyModalLabel">Lorem Ipsum</h4>
+                <button type="button" class="btn-close modal-supply__close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body modal-supply__body">
+                <p class="modal-supply__text">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <form class="modal-supply__form supply-form">
+                  <div class="form-group">
+                    <label for="dateselect" class="form-group__title">Date</label>
+                    <div class="input-group date" id="dateselect">
+                      <span class="input-group-append d-flex">
+                        <span class="input-group-text bg-white d-block supply-form__append"></span>
+                      </span>
+                      <input type="text" class="form-control supply-form__input" placeholder="08/08/2022">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <h5 class="form-group__title">Assigned to:</h5>
+                    <div class="dropdown supply-form__dropdown">
+                      <button class="btn dropdown-toggle supply-form__dropdown-btn" type="button"
+                        id="supplyDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">Please enter 2 or more
+                        characters</button>
+                      <ul class="dropdown-menu supply-form__dropdown-menu" aria-labelledby="supplyDropdownButton">
+                        <li><a class="dropdown-item" href="#">Madeline Tenny</a></li>
+                        <li><a class="dropdown-item" href="#">Lawrence Harding</a></li>
+                        <li><a class="dropdown-item" href="#">Willa Chavez</a></li>
+                        <li><a class="dropdown-item" href="#">Wade Warren</a></li>
+                        <li><a class="dropdown-item" href="#">Leslie Alexander</a></li>
+                        <li><a class="dropdown-item" href="#">Robert Fox</a></li>
+                        <li><a class="dropdown-item" href="#">Cameron Williamson</a></li>
+                        <li><a class="dropdown-item" href="#">Jacob Jones</a></li>
+                      </ul>
+                    </div>
+                    <ul class="chars-list">
+                      <li class="chars-list__item">
+                        <span class="chars-list__del"></span>
+                        <span class="chars-list__text">Lawrence Harding</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                    <h5 class="form-group__title">Followed by:</h5>
+                    <div class="dropdown supply-form__dropdown">
+                      <button class="btn dropdown-toggle supply-form__dropdown-btn" type="button"
+                        id="supplyDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">Please enter 2 or more
+                        characters</button>
+                      <ul class="dropdown-menu supply-form__dropdown-menu" aria-labelledby="supplyDropdownButton">
+                        <li><a class="dropdown-item" href="#">Madeline Tenny</a></li>
+                        <li><a class="dropdown-item" href="#">Lawrence Harding</a></li>
+                        <li><a class="dropdown-item" href="#">Willa Chavez</a></li>
+                        <li><a class="dropdown-item" href="#">Wade Warren</a></li>
+                        <li><a class="dropdown-item" href="#">Leslie Alexander</a></li>
+                        <li><a class="dropdown-item" href="#">Robert Fox</a></li>
+                        <li><a class="dropdown-item" href="#">Cameron Williamson</a></li>
+                        <li><a class="dropdown-item" href="#">Jacob Jones</a></li>
+                      </ul>
+                    </div>
+                    <ul class="chars-list">
+                      <li class="chars-list__item">
+                        <span class="chars-list__del"></span>
+                        <span class="chars-list__text">Lawrence Harding</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-group">
+                    <h5 class="form-group__title">Excepteur sint occaecat cupidatat</h5>
+                    <div class="form-check supply-form__check">
+                      <input class="form-check-input supply-form__checkbox" type="checkbox" value="" id="supplyCheck1">
+                      <label class="form-check-label supply-form__label" for="supplyCheck1">Lorem ipsum dolor sit amet
+                        *</label>
+                    </div>
+                    <div class="form-check supply-form__check">
+                      <input class="form-check-input supply-form__checkbox" type="checkbox" value="" id="supplyCheck2"
+                        checked>
+                      <label class="form-check-label supply-form__label" for="supplyCheck2">Lorem ipsum dolor sit amet
+                        *</label>
+                    </div>
+                    <div class="form-check supply-form__check">
+                      <input class="form-check-input supply-form__checkbox" type="checkbox" value="" id="supplyCheck3">
+                      <label class="form-check-label supply-form__label" for="supplyCheck3">Lorem ipsum dolor sit
+                        amet</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="supplyTextarea" class="form-label form-group__title">Add Comment</label>
+                    <textarea class="supply-form__textarea"
+                      id="supplyTextarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer modal-supply__footer">
+                <button type="button" class="btn modal-supply__btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn modal-supply__btn modal-supply__btn--accent">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
